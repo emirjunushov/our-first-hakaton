@@ -1,4 +1,4 @@
-const api = "  http://localhost:8000/hakaton";
+const api = "http://localhost:8000/hakaton";
 
 function focusOutFunction(e) {
   if (e.value.length > 0) {
@@ -73,7 +73,7 @@ async function render() {
     width: 72px;">
     Delete
   </button>
-  <button  style="    background: transparent;
+
   color: white;
   border: 1px solid white;
   width: 72px;" onclick ="editTodo(${element.id})" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button></div>
@@ -108,25 +108,7 @@ inpEdit.forEach((item) => {
     editedObj[e.target.name] = e.target.value;
   });
 });
-console.log(editedObj);
 
-async function editTodo(id) {
-  try {
-    let res = await fetch(`${api}/${id}`);
-
-    let objToEdit = await res.json();
-    console.log(objToEdit);
-
-    inpEdit.forEach((i) => {
-      i.value = objToEdit[i.name];
-    });
-    saveBtn.setAttribute("id", `${id}`);
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-saveBtn.addEventListener("click", async (e) => {
   let id = e.target.id;
   try {
     await fetch(`${api}/${id}`, {
