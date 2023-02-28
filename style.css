@@ -16,6 +16,7 @@ body {
   border-bottom-left-radius: 20px;
 }
 
+
 .title__nav {
   font-size: 20px;
   font-weight: 700;
@@ -24,11 +25,14 @@ body {
 /* ! NAVBAR END */
 
 /*! style of inputs start */
+
+/*! style of inputs focus start */
+
 .block-1 {
   position: relative;
   margin: 20px;
 }
-.input-class {
+.input-addcontacts {
   text-align: center;
   color: white;
   padding: 6px 12px;
@@ -70,26 +74,34 @@ body {
   left: 0;
   top: 0;
 }
-.input-class:focus ~ .my-border::before {
+.input-addcontacts:focus ~ .my-border::before {
   border-right-width: 2px;
   border-bottom-width: 2px;
   width: 99%;
   height: 94%;
   transition: 0.5s;
 }
-.input-class:focus ~ .my-border::after {
+.input-addcontacts:focus ~ .my-border::after {
   border-left-width: 2px;
   border-top-width: 2px;
   width: 99%;
   height: 94%;
   transition: 0.5s;
 }
-.input-class:focus ~ label {
+.input-addcontacts:focus ~ label {
   top: -20%;
   left: -19px;
   transition: 0.5s;
 }
-/*! style of inputs end */
+/*! style of inputs focus end */
+
+/* !style of inputs start  */
+
+.add-contact {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
 .btnAdd {
   width: 100px;
   height: 40px;
@@ -97,3 +109,11 @@ body {
   border: 2px solid white;
   color: white;
 }
+.btnAdd {
+  width: 100px;
+  height: 40px;
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+/* !style of inputs end */
