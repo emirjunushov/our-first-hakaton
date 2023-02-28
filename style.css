@@ -8,6 +8,7 @@ body {
 
 /* ! NAVBAR START */
 .nav {
+  background-color: rgba(240, 240, 240, 0.622);
   width: 100% !important;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
