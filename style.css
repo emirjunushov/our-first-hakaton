@@ -118,7 +118,25 @@ input::-webkit-inner-spin-button {
   width: 100px;
   height: 40px;
   background: transparent;
-  border: 2px solid white;
+  border: 2px solid rgba(255, 255, 255, 0.642);
   color: white;
 }
 /* !style of inputs end */
+
+/* ! POST STRAT */
+.h2OfPost {
+  color: white;
+}
+
+#title {
+  background-color: #ffffffa3;
+}
+
+#descr {
+  background-color: #ffffffa3;
+}
+
+#image {
+  background-color: #ffffffa3;
+}
+/* ! POST END */
