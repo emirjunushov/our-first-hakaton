@@ -108,7 +108,25 @@ inpEdit.forEach((item) => {
     editedObj[e.target.name] = e.target.value;
   });
 });
+console.log(editedObj);
 
+async function editTodo(id) {
+  try {
+    let res = await fetch(`${api}/${id}`);
+
+    let objToEdit = await res.json();
+    console.log(objToEdit);
+
+    inpEdit.forEach((i) => {
+      i.value = objToEdit[i.name];
+    });
+    saveBtn.setAttribute("id", `${id}`);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+saveBtn.addEventListener("click", async (e) => {
   let id = e.target.id;
   try {
     await fetch(`${api}/${id}`, {
