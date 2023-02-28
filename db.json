@@ -1,5 +1,12 @@
 {
-
-  "hakaton": []
-
+  "hakaton": [
+    {
+      "name": "Bekzat",
+      "surname": "Osmonaliev",
+      "photo": "https://happyday57.ru/wp-content/uploads/2022/03/foil-balloon-minion.jpg",
+      "number": "123455667",
+      "email": "Beka@gmail.com",
+      "id": 1
+    }
+  ]
 }
