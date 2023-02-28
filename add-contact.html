@@ -97,7 +97,7 @@
 
       <!-- CREATE END-->
 
-      <!--! Modal  start-->
+      <!-- !modal start -->
       <div
         class="modal fade"
         id="exampleModal"
@@ -106,11 +106,15 @@
         aria-hidden="true"
       >
         <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">
-                Edit product
-              </h1>
+          <div
+            class="modal-content"
+            style="
+              background-image: url(https://i.pinimg.com/564x/46/1a/5f/461a5ffd60eb3b2ecd09c788967adf6f.jpg);
+              background-size: cover;
+              object-fit: cover;
+            "
+          >
+            <div class="modal-header" style="border: none !important">
               <button
                 type="button"
                 class="btn-close"
@@ -118,49 +122,72 @@
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body">
-              <div class="d-flex flex-column w-100 align-items-center">
-                <input
-                  type="text"
-                  class="mb-2 form-control"
-                  placeholder="title"
-                  id="edit-name"
-                />
-                <input
-                  type="text"
-                  class="mb-2 form-control"
-                  placeholder="price"
-                  id="edit-surname"
-                />
-                <input
-                  type="text"
-                  class="mb-2 form-control"
-                  placeholder="image URL"
-                  id="edit-image"
-                />
-                <input
-                  type="text"
-                  class="mb-2 form-control"
-                  placeholder="description"
-                  id="edit-phone"
-                />
-                <input
-                  type="text"
-                  class="mb-2 form-control"
-                  placeholder="description"
-                  id="edit-email"
-                />
-              </div>
+            <div style="border: none !important" class="modal-body">
+              <input
+                style="
+                  background: transparent;
+                  margin: 0 0px 10px;
+                  text-align: center;
+                "
+                name="name"
+                type="text"
+                class="form-control inp-edit"
+              />
+              <input
+                style="
+                  background: transparent;
+                  margin: 0 0px 10px;
+                  text-align: center;
+                "
+                name="surname"
+                type="text"
+                class="form-control inp-edit"
+              />
+              <input
+                style="
+                  background: transparent;
+                  margin: 0 0px 10px;
+                  text-align: center;
+                "
+                name="photo"
+                type="text"
+                class="form-control inp-edit"
+              />
+              <input
+                style="
+                  background: transparent;
+                  margin: 0 0px 10px;
+                  text-align: center;
+                "
+                name="number"
+                type="text"
+                class="form-control inp-edit"
+              />
+              <input
+                style="
+                  background: transparent;
+                  margin: 0 0px 10px;
+                  text-align: center;
+                "
+                name="email"
+                type="text"
+                class="form-control inp-edit"
+              />
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer" style="border: none !important">
               <button
+                style="background: transparent"
                 type="button"
                 class="btn btn-secondary"
                 data-bs-dismiss="modal"
               >
                 Close
               </button>
-              <button type="button" id="btn-save-edit" class="btn btn-primary">
+              <button
+                style="background: transparent"
+                type="button"
+                class="btn btn-primary save-btn"
+              >
                 Save changes
               </button>
             </div>
@@ -194,7 +221,11 @@
       </nav>
       <!-- !pagination end -->
     </div>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
     <script src="./add-contact.js"></script>
   </body>
 </html>

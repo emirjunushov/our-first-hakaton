@@ -73,10 +73,10 @@ async function render() {
     width: 72px;">
     Delete
   </button>
-  <button class="btn-edit" style=" background: transparent;
+
   color: white;
   border: 1px solid white;
-  width: 72px;" id=${element.id}" data-bs-toggle="modal" data-bs-target="#exampleModal">edit</button></div>
+  width: 72px;" onclick ="editTodo(${element.id})" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button></div>
 
     </div>
   </div>
@@ -94,65 +94,37 @@ async function deleteTodo(id) {
     console.log(error);
   }
 }
+
 // !=============================modal============================
-let editname = document.querySelector("#edit-name");
-let editsurname = document.querySelector("#edit-surname");
-let editphoto = document.querySelector("#edit-image");
-let editphone = document.querySelector("#edit-phone");
-let editemail = document.querySelector("#edit-email");
-let editSaveBtn = document.querySelector("#btn-save-edit");
-let exampleModal = document.querySelector("#exampleModal");
 
-document.addEventListener("click", (e) => {
-  if (e.target.classList.contains("btn-edit")) {
-    let id = e.target.id;
+let inpEdit = document.querySelectorAll(".inp-edit");
+let saveBtn = document.querySelector(".save-btn");
+let editModal = document.querySelector("#exampleModal");
 
-    fetch(`${api}/${id}`)
-      .then((res) => res.json())
-      .then((data) => {
-        (editname = data.name),
-          (editsurname.value = data.surname),
-          (editphoto.value = data.image),
-          (editphone.value = data.phone),
-          (editemail.value = data.email);
+let editedObj = {};
 
-        editSaveBtn.id = data.id;
-      });
-  }
+inpEdit.forEach((item) => {
+  item.addEventListener("input", (e) => {
+    editedObj[e.target.name] = e.target.value;
+  });
 });
-//функция для отправки отредактированных данных на сервер
-editSaveBtn.addEventListener("click", (e) => {
-  console.log("emirs");
+
   let id = e.target.id;
-  let name = editname.value;
-  let surname = editsurname.value;
-  let photo = editphoto.value;
-  let phone = editphone.value;
-  let email = editemail.value;
-  if (!name || !photo || !surname || !phone || !email) {
-    alert("заполните поле");
-    return;
+  try {
+    await fetch(`${api}/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json; charset=utf-8",
+      },
+      body: JSON.stringify(editedObj),
+    });
+  } catch (error) {
+    console.log(error);
   }
-  let editedProduct = {
-    name: name,
-    surname: surname,
-    photo: image,
-    phone: phone,
-    email: email,
-  };
-  saveEdit(editedProduct, id);
-});
-function saveEdit(editedProduct, id) {
-  fetch(`${api}/${id}`, {
-    method: "PATCH",
-    headers: {
-      "Content-Type": "application/json; charset=utf-8",
-    },
-    body: JSON.stringify(editedProduct),
-  }).then(() => render());
-  let modal = bootstrap.Modal.getInstance(exampleModal);
+  render();
+  let modal = bootstrap.Modal.getInstance(editModal);
   modal.hide();
-}
+});
 
 //!=============================pagination=============================
 
