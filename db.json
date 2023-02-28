@@ -1,36 +1,3 @@
 {
-  "hakaton": [
-    {
-      "name": "asdf",
-      "surname": "dsaf",
-      "photo": "sfdd",
-      "number": "34",
-      "email": "sadf",
-      "id": 5
-    },
-    {
-      "name": "dsfg",
-      "surname": "dsfd",
-      "photo": "dsfd",
-      "number": "34",
-      "email": "sfdg",
-      "id": 6
-    },
-    {
-      "name": "ert",
-      "surname": "wertyt",
-      "photo": "wewrtt",
-      "number": "3456",
-      "email": "erty",
-      "id": 9
-    },
-    {
-      "name": "sdf",
-      "surname": "dsf",
-      "photo": "dsfd",
-      "number": "345",
-      "email": "sdf",
-      "id": 10
-    }
-  ]
+  "hakaton": []
 }
