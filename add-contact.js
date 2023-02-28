@@ -1,4 +1,4 @@
-const api = "  http://localhost:8000/hakaton";
+const api = "http://localhost:8000/hakaton";
 
 function focusOutFunction(e) {
   if (e.value.length > 0) {
@@ -70,7 +70,7 @@ async function render() {
     width: 72px;">
     Delete
   </button>
-  <button  style="    background: transparent;
+
   color: white;
   border: 1px solid white;
   width: 72px;" onclick ="editTodo(${element.id})" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
