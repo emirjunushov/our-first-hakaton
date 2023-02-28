@@ -92,6 +92,11 @@ body {
   transition: 0.5s;
 }
 
+.forNumber::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
 /*! style of inputs focus end */
 
 /* !style of inputs start  */
