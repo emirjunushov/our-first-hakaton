@@ -36,21 +36,18 @@ btnAdd.addEventListener("click", () => {
   render();
 });
 //!==========================функция для отоброжения карточек продукта============================
-//получаем список продуктов с сервера
 async function render() {
   let res = await fetch(`${api}?q=${searchVal}&_page=${curentPage}&_limit=3`);
+
   let products = await res.json();
+
   drawPaginationButtons();
-  //очишаем list
   list.innerHTML = "";
-  //перебираем масив products
   products.forEach((element) => {
-    //создаем новый див
     let newElem = document.createElement("div");
 
-    //создаем id новому div'у
     newElem.id = element.id;
-    //помещаем карточку из bs в созданный div
+
     newElem.innerHTML = `
     <div class="card" style="width: 17rem; margin: 2rem;text-align: center;background: transparent; border: 2px solid white   ">
     <img src=${element.photo} class="card-img-top" style="width: 125px;
@@ -76,7 +73,13 @@ async function render() {
 
   color: white;
   border: 1px solid white;
-  width: 72px;" onclick ="editTodo(${element.id})" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button></div>
+  width: 72px;" onclick ="editTodo(${element.id})" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
+  <button id="sign-btn"
+   style="    background: transparent;
+  color: white;
+  border: 1px solid white;
+  width: 72px;"  ><a   href="./index.html" style="text-decoration: none; color: white">Sign in</a> </button>
+  </div>
 
     </div>
   </div>
@@ -86,6 +89,7 @@ async function render() {
   });
 }
 render();
+
 async function deleteTodo(id) {
   try {
     await fetch(`${api}/${id}`, { method: "DELETE" });
@@ -151,21 +155,14 @@ let prev = document.querySelector(".prev");
 let next = document.querySelector(".next");
 let curentPage = 1;
 let pageTotalCount = 0;
-//функция для отрисовки кнопок пагинации
 
 function drawPaginationButtons() {
-  //отправляем запрос для получения обшего кол-во продуктов
-
   fetch(`${api}?q=${searchVal}`)
     .then((res) => res.json())
     .then((data) => {
-      //рассчитываем обшее кол-во страниц
-
       pageTotalCount = Math.ceil(data.length / 3);
-      paginationList.innerHTML = ""; //очищаем
-
+      paginationList.innerHTML = "";
       for (let i = 1; i <= pageTotalCount; i++) {
-        //создаем кнопки с цифрами и для текуший страницы задаем класс active
         if (curentPage == i) {
           let page1 = document.createElement("li");
           page1.innerHTML = `
@@ -180,7 +177,6 @@ function drawPaginationButtons() {
           paginationList.append(page1);
         }
       }
-      //красим серый цвет prev/next кнопки
       if (curentPage == 1) {
         prev.classList.add("disabled");
       } else {
@@ -193,15 +189,10 @@ function drawPaginationButtons() {
       }
     });
 }
-//слущатель событий для кнопкми prev
-
 prev.addEventListener("click", () => {
-  //делаем проверку на то не находимся ли мы на первой странице
   if (curentPage <= 1) {
     return;
   }
-  //если не нахадоимся на первой странице то перезаписываем curenyPage и вызываем render()
-
   curentPage--;
   render();
 });
@@ -214,19 +205,14 @@ next.addEventListener("click", () => {
 });
 
 document.addEventListener("click", (e) => {
-  //отлавоиваем клик по цифре из пагинации
-
   if (e.target.classList.contains("page_number")) {
-    //перезаписываем на то значения corent page которое содержит элемент на который наджали
     curentPage = e.target.innerText;
-    //вызываем render с пепзаписсанным currentPage
     render();
   }
 });
-//search
 searchInp.addEventListener("input", () => {
   searchVal = searchInp.value;
   render();
 });
+
 render();
-// beka looser
