@@ -10,3 +10,10 @@ function focusOutFunction(e) {
   }
 }
 // !для фокуса не трогай
+
+//!стягивание
+const inputs = document.querySelector(".input-addcontacts");
+const mainList = document.querySelector(".main-list");
+const addBtn = document.querySelector(".btnAdd");
+
+//!

@@ -105,6 +105,7 @@ input::-webkit-inner-spin-button {
   align-items: center;
   display: flex;
   flex-direction: column;
+  margin-top: 6%;
 }
 .btnAdd {
   width: 100px;
