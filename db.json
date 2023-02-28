@@ -1,14 +1,6 @@
 {
   "hakaton": [
     {
-      "name": "asdf",
-      "surname": "dsaf",
-      "photo": "sfdd",
-      "number": "34",
-      "email": "sadf",
-      "id": 5
-    },
-    {
       "name": "dsfg",
       "surname": "dsfd",
       "photo": "dsfd",
@@ -23,6 +15,14 @@
       "number": "3456",
       "email": "erty",
       "id": 9
+    },
+    {
+      "name": "",
+      "surname": "sdf",
+      "photo": "dsf",
+      "number": "34",
+      "email": "sdf",
+      "id": 10
     }
   ]
 }

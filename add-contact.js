@@ -1,4 +1,4 @@
-const api = "  http://localhost:8000/hakaton";
+const api = "http://localhost:8000/hakaton";
 
 function focusOutFunction(e) {
   if (e.value.length > 0) {
@@ -73,7 +73,7 @@ async function render() {
     width: 72px;">
     Delete
   </button>
-  <button class= " btn-edit"   style="    background: transparent;
+  <button class="btn-edit" style=" background: transparent;
   color: white;
   border: 1px solid white;
   width: 72px;" id=${element.id}" data-bs-toggle="modal" data-bs-target="#exampleModal">edit</button></div>
@@ -122,6 +122,7 @@ document.addEventListener("click", (e) => {
 });
 //функция для отправки отредактированных данных на сервер
 editSaveBtn.addEventListener("click", (e) => {
+  console.log("emirs");
   let id = e.target.id;
   let name = editname.value;
   let surname = editsurname.value;
