@@ -14,82 +14,187 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <!-- NAVBAR START -->
-    <nav class="navbar nav">
-      <div class="container-fluid">
-        <a href="./index.html" target="_parent" class="navbar-brand title__nav"
-          >HOME</a
-        >
-        <form class="d-flex" role="search">
+    <div class="container">
+      <!-- NAVBAR START -->
+      <nav class="navbar nav">
+        <div class="container-fluid">
+          <a
+            id="home-btn"
+            href="./index.html"
+            target="_parent"
+            class="navbar-brand title__nav"
+            >HOME</a
+          >
+          <form class="d-flex" role="search">
+            <input
+              id="search"
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+          </form>
+        </div>
+      </nav>
+      <!-- NAVBAR END -->
+      <!-- CREATE START-->
+      <div class="add-contact">
+        <div class="block-1">
           <input
-            class="form-control me-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
+            name="name"
+            type="text"
+            class="input-addcontacts"
+            onfocusout="focusOutFunction(this)"
           />
-        </form>
-      </div>
-    </nav>
-    <!-- NAVBAR END -->
-    <!-- CREATE START-->
-    <div class="add-contact">
-      <div class="block-1">
-        <input
-          name="name"
-          type="text"
-          class="input-addcontacts"
-          onfocusout="focusOutFunction(this)"
-        />
-        <label id="name-label">NAME</label>
-        <span class="my-border"></span>
-      </div>
-      <div class="block-1">
-        <input
-          name="surname"
-          type="text"
-          class="input-addcontacts"
-          onfocusout="focusOutFunction(this)"
-        />
-        <label id="name-label">SURNAME</label>
-        <span class="my-border"></span>
-      </div>
-      <div class="block-1">
-        <input
-          name="photo"
-          type="text"
-          class="input-addcontacts"
-          onfocusout="focusOutFunction(this)"
-        />
-        <label id="name-label">PHOTO</label>
-        <span class="my-border"></span>
-      </div>
-      <div class="block-1">
-        <input
-          name="number"
-          type="number"
-          class="input-addcontacts"
-          onfocusout="focusOutFunction(this)"
-        />
-        <label id="name-label">PHONE</label>
-        <span class="my-border"></span>
-      </div>
-      <div class="block-1">
-        <input
-          name="email"
-          type="text"
-          class="input-addcontacts"
-          onfocusout="focusOutFunction(this)"
-        />
-        <label id="name-label">EMAIL</label>
-        <span class="my-border"></span>
+          <label id="name-label">NAME</label>
+          <span class="my-border"></span>
+        </div>
+        <div class="block-1">
+          <input
+            name="surname"
+            type="text"
+            class="input-addcontacts"
+            onfocusout="focusOutFunction(this)"
+          />
+          <label id="name-label">SURNAME</label>
+          <span class="my-border"></span>
+        </div>
+        <div class="block-1">
+          <input
+            name="photo"
+            type="text"
+            class="input-addcontacts"
+            onfocusout="focusOutFunction(this)"
+          />
+          <label id="name-label">PHOTO</label>
+          <span class="my-border"></span>
+        </div>
+        <div class="block-1">
+          <input
+            name="number"
+            type="number"
+            class="input-addcontacts"
+            onfocusout="focusOutFunction(this)"
+          />
+          <label id="name-label">PHONE</label>
+          <span class="my-border"></span>
+        </div>
+        <div class="block-1">
+          <input
+            name="email"
+            type="text"
+            class="input-addcontacts"
+            onfocusout="focusOutFunction(this)"
+          />
+          <label id="name-label">EMAIL</label>
+          <span class="my-border"></span>
+        </div>
+
+        <div class="main-btn">
+          <button class="btnAdd">ADD</button>
+        </div>
       </div>
 
-      <div class="main-btn">
-        <button class="btnAdd">ADD</button>
+      <!-- CREATE END-->
+
+      <!--! Modal  start-->
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Edit product
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="d-flex flex-column w-100 align-items-center">
+                <input
+                  type="text"
+                  class="mb-2 form-control"
+                  placeholder="title"
+                  id="edit-name"
+                />
+                <input
+                  type="text"
+                  class="mb-2 form-control"
+                  placeholder="price"
+                  id="edit-surname"
+                />
+                <input
+                  type="text"
+                  class="mb-2 form-control"
+                  placeholder="image URL"
+                  id="edit-image"
+                />
+                <input
+                  type="text"
+                  class="mb-2 form-control"
+                  placeholder="description"
+                  id="edit-phone"
+                />
+                <input
+                  type="text"
+                  class="mb-2 form-control"
+                  placeholder="description"
+                  id="edit-email"
+                />
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" id="btn-save-edit" class="btn btn-primary">
+                Save changes
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
+      <!-- ! Modal  end -->
+      <!-- ulka start -->
+      <div
+        id="product-list"
+        class="d-flex flex-wrap justify-content-center"
+      ></div>
+      <!-- ulka start -->
+
+      <!-- !pagination start -->
+      <nav aria-label="Page navigation example">
+        <ul class="pagination d-flex justify-content-center">
+          <li class="page-item prev">
+            <a class="page-link" href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <!-- <li class="page-item"><a class="page-link" href="#">1</a></li> -->
+          <div class="pagination-list d-flex"></div>
+          <li class="page-item next">
+            <a class="page-link" href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- !pagination end -->
     </div>
 
-    <!-- CREATE END-->
     <script src="./add-contact.js"></script>
   </body>
 </html>
