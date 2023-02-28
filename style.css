@@ -1,3 +1,4 @@
+/*! style of inputs start */
 body {
   background-color: black;
 }
@@ -65,4 +66,12 @@ body {
   top: -20%;
   left: -19px;
   transition: 0.5s;
+}
+/*! style of inputs end */
+.btnAdd {
+  width: 100px;
+  height: 40px;
+  background: transparent;
+  border: 2px solid white;
+  color: white;
 }
