@@ -70,7 +70,7 @@ async function render() {
     width: 72px;">
     Delete
   </button>
- <button
+   <button
   color: white;
   border: 1px solid white;
   width: 72px;" onclick ="editTodo(${element.id})" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
@@ -99,7 +99,7 @@ async function deleteTodo(id) {
   }
 }
 
-// !=============================modal============================
+// !=============================modal==========================
 
 let inpEdit = document.querySelectorAll(".inp-edit");
 let saveBtn = document.querySelector(".save-btn");
